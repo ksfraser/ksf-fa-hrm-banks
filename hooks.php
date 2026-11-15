@@ -72,6 +72,7 @@ class hooks_ksf_FA_HRMBanks extends hooks {
         if (!isset($data['module']) || !is_string($data['module'])) { $data['error'] = 'RELATED_TO_FIELDS requires data[module]'; return null; }
         if (!isset($data['type']) || !is_string($data['type'])) { $data['error'] = 'RELATED_TO_FIELDS requires data[type]'; return null; }
         if (!isset($data['fields']) || !is_array($data['fields'])) { $data['fields'] = array(); }
+        if (!in_array($data['type'], ['hrm_bank_account', 'hrm_bank_ledger'])) { return null; }
         if ($data['type'] === 'hrm_bank_account') {
             $data['fields'] = array_merge($data['fields'], array(
                 'bank_type' => _('Bank Type'),
