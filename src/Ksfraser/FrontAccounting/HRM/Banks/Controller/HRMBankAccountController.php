@@ -19,10 +19,7 @@ class HRMBankAccountController extends AbstractTabController
         $this->service = new HRMBankAccountService();
     }
 
-    protected function getPkField(): string
-    {
-        return 'id';
-    }
+    protected function getPkField(): string { return 'id'; }
 
     protected function getFieldMetadata(): array
     {
@@ -81,7 +78,7 @@ class HRMBankAccountController extends AbstractTabController
         echo '</tr>';
 
         if (empty($rows)) {
-            echo '<tr><td colspan="7"><em>'
+            echo '<tr><td colspan="8"><em>'
                 . htmlspecialchars($this->localise('No bank accounts yet.'), ENT_QUOTES)
                 . '</em></td></tr>';
         }
@@ -93,6 +90,8 @@ class HRMBankAccountController extends AbstractTabController
             echo '<td>' . htmlspecialchars($row['fields']['bank_name'] ?? '', ENT_QUOTES, 'UTF-8') . '</td>';
             echo '<td>' . htmlspecialchars($row['fields']['current_balance'] ?? '', ENT_QUOTES, 'UTF-8') . '</td>';
             echo '<td>' . htmlspecialchars($row['fields']['available_balance'] ?? '', ENT_QUOTES, 'UTF-8') . '</td>';
+            echo '<td>' . htmlspecialchars($row['fields']['accrued_balance'] ?? '', ENT_QUOTES, 'UTF-8') . '</td>';
+            echo '<td>' . htmlspecialchars($row['fields']['used_balance'] ?? '', ENT_QUOTES, 'UTF-8') . '</td>';
             echo '<td><a href="' . htmlspecialchars($row['url'] ?? '#', ENT_QUOTES, 'UTF-8') . '" target="_blank">'
                 . htmlspecialchars($this->localise('View'), ENT_QUOTES, 'UTF-8') . '</a></td>'
             . '</tr>';
