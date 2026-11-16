@@ -78,7 +78,7 @@ class HRMBankAccountController extends AbstractTabController
         echo '</tr>';
 
         if (empty($rows)) {
-            echo '<tr><td colspan="8"><em>'
+            echo '<tr><td colspan="7"><em>'
                 . htmlspecialchars($this->localise('No bank accounts yet.'), ENT_QUOTES)
                 . '</em></td></tr>';
         }
