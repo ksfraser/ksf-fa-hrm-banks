@@ -1,8 +1,8 @@
 <?php
 declare(strict_types=1);
 
-use Ksfraser\FrontAccounting\HRM\Banks\App\HRMBankAppShell;
 use Ksfraser\FrontAccounting\HRM\Banks\App\HRMBankFrontController;
+use Ksfraser\FrontAccounting\HRM\Banks\App\HRMBankAppShell;
 
 $path_to_root = '../..';
 
