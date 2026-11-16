@@ -74,11 +74,12 @@ class HRMBankAccountController extends AbstractTabController
         $th(_('Available Balance'));
         $th(_('Accrued Balance'));
         $th(_('Used Balance'));
+        $th(_('Expires On'));
         $th(_('Actions'));
         echo '</tr>';
 
         if (empty($rows)) {
-            echo '<tr><td colspan="7"><em>'
+            echo '<tr><td colspan="8"><em>'
                 . htmlspecialchars($this->localise('No bank accounts yet.'), ENT_QUOTES)
                 . '</em></td></tr>';
         }
